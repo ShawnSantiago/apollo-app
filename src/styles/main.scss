@@ -1,0 +1,101 @@
+#shopify-section-template--17681705566491__newsletter {
+  margin-top: 0;
+}
+.header__search,
+.footer__content-top {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.product-interactive {
+  display: flex !important;
+  position: relative !important;
+  * {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+  .product-container {
+    display: flex;
+    margin: auto;
+    position: relative;
+  }
+
+  .component_bar {
+    position: absolute;
+    top: 184px;
+    left: 361.66px;
+    z-index: 10;
+    opacity: 0;
+  }
+  .component_front_bracket {
+    position: absolute;
+    top: 461px;
+    left: 351px;
+    z-index: 10;
+    opacity: 0;
+  }
+  .component_rear_bracket {
+    position: absolute;
+    top: 521px;
+    left: 696px;
+    z-index: 10;
+    opacity: 0;
+  }
+  .parts-list {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    min-width: 100px;
+    transition: opacity 0.5s;
+    z-index: 100;
+    h2 {
+      margin-top: 10px;
+    }
+    ul {
+      min-height: 100px;
+      display: block;
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      .remove {
+        cursor: pointer;
+        color: red;
+        border: none;
+        background: none;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: blue;
+        }
+      }
+    }
+    .checkout {
+      width: 100%;
+      background: black;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      z-index: 100;
+      &:hover {
+        background: red;
+      }
+    }
+  }
+  .parts-list.is-empty {
+    opacity: 0;
+  }
+}
