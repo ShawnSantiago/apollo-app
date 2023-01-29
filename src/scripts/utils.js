@@ -31,6 +31,7 @@ export const checkOutHandler = () => {
   return formData;
 };
 export const addtocart = (formData) => {
+  document.querySelector(".loading").classList.add("is-active");
   fetch(window.Shopify.routes.root + "cart/add.js", {
     method: "POST",
     headers: {
@@ -40,7 +41,7 @@ export const addtocart = (formData) => {
   })
     .then(async (response) => {
       const reader = await response.json();
-
+      document.querySelector(".loading").classList.remove("is-active");
       cart.renderContents({
         ...reader.items[0],
         sections: reader.sections,
@@ -125,7 +126,7 @@ export class PartsListController {
     partsList.appendChild(li);
   };
   checkOutHandler = () => {
-    const parts = this.partsListData;
+    const parts = this.partsListData || this.getPartsData();
 
     const formData = {
       items: [],
