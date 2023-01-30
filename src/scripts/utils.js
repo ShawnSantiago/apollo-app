@@ -67,6 +67,7 @@ export class PartsListController {
 
   storeParts = (id) => {
     if (!this.partsListData) {
+      this.partsListData = [id];
       localStorage.setItem("partsListData", JSON.stringify([id]));
       return;
     }
